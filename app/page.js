@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
+import ButtonLogin from "./components/ButtonLogin";
 
 export default function Home() {
   return (
@@ -7,6 +8,10 @@ export default function Home() {
       <div>
         Create a feedback board in minutes, prioritize features, and build products your customers will love.
       </div>
+      <Link href="/dashboard">Dashboard</Link>
+
+      {/* reactJS (JavaScript library) */}
+      <button onClick={() => console.log("Logging in...")}>Login</button>
     </main>
   );
 }
