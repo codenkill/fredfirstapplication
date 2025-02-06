@@ -1,6 +1,7 @@
 "use client"; // This must be the very first line in the file
 
 import ButtonLogin from "@/components/ButtonLogin";
+import FAQListItem from "@/components/FAQListItem";
 
 export default function Home() {
   const isLoggedIn = true;
@@ -20,8 +21,8 @@ export default function Home() {
       <div className="max-w-3xl mx-auto flex justify-between items-center px-8 py-2">
         <div className="font-bold">FredApp</div>
         <div className="space-x-4 max-md:hidden">
-          <a className="link link-hover">Pricing</a>
-          <a className="link link-hover">FAQ</a>
+          <a className="link link-hover" href="#pricing">Pricing</a>
+          <a className="link link-hover" href="#faq">FAQ</a>
         </div>
         <div>
           <ButtonLogin isLoggedIn={isLoggedIn} name={name}/>
@@ -40,8 +41,8 @@ export default function Home() {
       </section>
 
     {/* PRICING */}
-    <section className="bg-base-200 py-32">
-      <div className="px-8 py-32 max-w-3xl mx-auto"></div>
+    <section className="bg-base-200" id="pricing">
+      <div className="px-8 py-20 max-w-3xl mx-auto"></div>
         <p className="text-sm uppercase font-medium text-center text-primary mb-4">
           Pricing
         </p>
@@ -127,6 +128,38 @@ export default function Home() {
 
         </div>
     </section>
-    </main>
+    
+
+    {/* FAQ */}
+    <section className="bg-base-200" id="faq">
+      <div className="py-20 px-8 max-w-3xl mx-auto">
+        <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+          FAQ
+        </p>
+        <h2 className="text-3xl lg:text-4xl font-extrabold mb-12 text-center">
+          Frequently Asked Questions
+        </h2>
+        <ul className="max-w-lg mx-auto">
+          {
+            [
+              { 
+                question: "Question 1", 
+                answer: "Answer 1" 
+              },
+              { 
+                question: "Question 2", 
+                answer: "Answer 2" 
+              },
+              { 
+                question: "Question 3", 
+                answer: "Answer 3" 
+              },
+            ].map((qa) => (
+              <FAQListItem key={qa.question} qa={qa} />
+            ))}
+        </ul>
+      </div>
+    </section>
+  </main>
   );
 }
