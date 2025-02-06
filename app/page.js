@@ -6,6 +6,13 @@ export default function Home() {
   const isLoggedIn = true;
   const name ="Fred";
 
+  const age = 19;
+  let canVote;
+
+  const greeting1 = `Hello ${isLoggedIn ? name : "there"}`;
+  console.log(greeting1);
+  // OUTPUT 1: "Hello Fred"
+
   return (
   <main>
     {/* HEADER */}
@@ -112,7 +119,11 @@ export default function Home() {
           
         </ul>
 
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        <ButtonLogin 
+        isLoggedIn={isLoggedIn} 
+        name={name} 
+        extraStyle="w-full" 
+        />
 
         </div>
     </section>
