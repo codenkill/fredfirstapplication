@@ -2,6 +2,8 @@
 
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import productDemo from "@/app/productDemo.jpeg";
 
 export default function Home() {
   const isLoggedIn = true;
@@ -18,7 +20,7 @@ export default function Home() {
   <main>
     {/* HEADER */}
     <section className="bg-base-200">
-      <div className="max-w-3xl mx-auto flex justify-between items-center px-8 py-2">
+      <div className="max-w-5xl mx-auto flex justify-between items-center px-8 py-2">
         <div className="font-bold">FredApp</div>
         <div className="space-x-4 max-md:hidden">
           <a className="link link-hover" href="#pricing">Pricing</a>
@@ -30,7 +32,14 @@ export default function Home() {
       </div>
       </section>
     {/* HERO */}  
-      <section className="px-8 text-center py-32 max-w-3xl mx-auto">
+      <section className="px-8 text-center lg:text-left py-32 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center">
+      <Image 
+        src={productDemo} 
+        alt="Product demo" 
+        className="w-96 rounded-xl" 
+      />
+
+      <div>
       <h1 className="text-4xl font-bold mb-6">
         Collect customer feedback to build better products
       </h1>
@@ -38,6 +47,7 @@ export default function Home() {
         Create a feedback board in minutes, prioritize features, and build products your customers will love.
       </div>
       <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+      </div>
       </section>
 
     {/* PRICING */}
