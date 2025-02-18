@@ -9,6 +9,8 @@ export default function Home() {
   const isLoggedIn = true;
   const name ="Fred";
 
+  console.log(process.env.MONGO_URI);
+
   const age = 19;
   let canVote;
 
