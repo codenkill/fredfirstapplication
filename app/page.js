@@ -3,6 +3,7 @@ import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/app/productDemo.jpeg";
 import { auth } from "@/auth";
+import logo from "./logo.svg";  // Using relative path instead of alias
 
 export default async function Home() {
   const session = await auth();
@@ -12,7 +13,16 @@ export default async function Home() {
     {/* HEADER */}
     <section className="bg-base-200">
       <div className="max-w-5xl mx-auto flex justify-between items-center px-8 py-2">
-        <div className="font-bold">🥦CalFuel</div>
+        <div className="font-bold flex items-center">
+          <Image
+            src={logo}
+            alt="CalFuel Logo"
+            width={128}
+            height={40}
+            priority
+            className="w-auto h-8"
+          />
+        </div>
         <div className="space-x-4 max-md:hidden">
           <a className="link link-hover" href="#pricing">Pricing</a>
           <a className="link link-hover" href="#faq">FAQ</a>
