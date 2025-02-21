@@ -1,22 +1,11 @@
-"use client"; // This must be the very first line in the file
-
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/app/productDemo.jpeg";
+import { auth } from "@/auth";
 
-export default function Home() {
-  const isLoggedIn = true;
-  const name ="Fred";
-
-  console.log(process.env.MONGO_URI);
-
-  const age = 19;
-  let canVote;
-
-  const greeting1 = `Hello ${isLoggedIn ? name : "there"}`;
-  console.log(greeting1);
-  // OUTPUT 1: "Hello Fred"
+export default async function Home() {
+  const session = await auth();
 
   return (
   <main>
@@ -29,7 +18,7 @@ export default function Home() {
           <a className="link link-hover" href="#faq">FAQ</a>
         </div>
         <div>
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name}/>
+          <ButtonLogin session={session} />
         </div>
       </div>
       </section>
@@ -48,7 +37,7 @@ export default function Home() {
       <div className="opacity-90 mb-10">
         Create a feedback board in minutes, prioritize features, and build products your customers will love.
       </div>
-      <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+      <ButtonLogin session={session} />
       </div>
       </section>
 
@@ -133,8 +122,7 @@ export default function Home() {
         </ul>
 
         <ButtonLogin 
-        isLoggedIn={isLoggedIn} 
-        name={name} 
+        session={session} 
         extraStyle="w-full" 
         />
 
