@@ -6,11 +6,22 @@ const ButtonLogin = ({ isLoggedIn, name, extraStyle }) => {
     console.log(extraStyle);
 
     if (isLoggedIn) {
-    return <Link href="/dashboard" className={`btn btn-primary  ${extraStyle ? extraStyle : ""}`}>
-        Welcome back {name}
-        </Link>;
+        return (
+            <Link 
+                href="/dashboard" 
+                className={`btn bg-[#4ade80] border-0 hover:bg-[#38d56d] ${extraStyle ? extraStyle : ""}`}
+            >
+                Welcome back {name}
+            </Link>
+        );
     } else {
-        return <button>Login</button>
+        return (
+            <button 
+                className="btn bg-[#4ade80] border-0 hover:bg-[#38d56d]"
+            >
+                Login
+            </button>
+        );
     }
 };
 
