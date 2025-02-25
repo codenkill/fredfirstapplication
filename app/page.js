@@ -54,7 +54,7 @@ export default async function Home() {
     {/* PRICING */}
     <section className="bg-base-200" id="pricing">
       <div className="px-8 py-20 max-w-3xl mx-auto"></div>
-        <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+        <p className="text-sm uppercase font-medium text-center text-green-400 mb-4">
           Pricing
         </p>
         <h2 className="text-3xl lg:text-4xl font-extrabold mb-12 text-center">
@@ -64,7 +64,7 @@ export default async function Home() {
         <div className="p-8 bg-base-100 w-96 rounded-3xl mx-auto space-y-6">
           <div className="flex gap-2 items-baseline">
            <div className="text-4xl font-black">$19</div> 
-           <div className="uppercase text-sm font-medium opacity-60">/month</div>
+           <div className="uppercase text-sm font-medium opacity-60">forever</div>
            </div>
 
         <ul className="space-y-2">
@@ -143,7 +143,7 @@ export default async function Home() {
     {/* FAQ */}
     <section className="bg-base-200" id="faq">
       <div className="py-20 px-8 max-w-3xl mx-auto">
-        <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+        <p className="text-sm uppercase font-medium text-center text-green-400 mb-4">
           FAQ
         </p>
         <h2 className="text-3xl lg:text-4xl font-extrabold mb-12 text-center">
@@ -153,16 +153,16 @@ export default async function Home() {
           {
             [
               { 
-                question: "Question 1", 
-                answer: "Answer 1" 
+                question: "How is this app different from MyFitnessPal?", 
+                answer: "Unlike MyFitnessPal, which focuses on calorie counting, our app is designed to give you personalized insights based on your habits." 
               },
               { 
-                question: "Question 2", 
-                answer: "Answer 2" 
+                question: "Is this app beginner-friendly?", 
+                answer: "Absolutely! We built this app to be simple, intuitive, and frustration-free. Whether you’re just starting your health journey or you’re a seasoned pro, our features adapt to your level—no overwhelming dashboards or confusing settings." 
               },
               { 
-                question: "Question 3", 
-                answer: "Answer 3" 
+                question: "Do I need a subscription to use the app?", 
+                answer: "Yes, but unlike most fitness apps that charge monthly fees, we offer a one-time payment of just €19.99—forever for the first 20 customers. No hidden costs, no recurring charges — just full access for life." 
               },
             ].map((qa) => (
               <FAQListItem key={qa.question} qa={qa} />
