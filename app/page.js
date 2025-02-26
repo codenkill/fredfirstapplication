@@ -42,10 +42,10 @@ export default async function Home() {
 
       <div>
       <h1 className="text-4xl font-bold mb-6">
-        Collect customer feedback to build better products
+        The calorie tracker built by you, for you.
       </h1>
       <div className="opacity-90 mb-10">
-        Create a feedback board in minutes, prioritize features, and build products your customers will love.
+        Enter your foods and meals and NEVER lose track of your macros. It was never this easy to have full control.
       </div>
       <ButtonLogin session={session} />
       </div>
